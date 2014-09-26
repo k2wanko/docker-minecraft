@@ -3,7 +3,9 @@
 ## EULA
 if [ ! -e "./eula.txt" ]; then 
     eula=${EULA:-false}
-    echo "eula=$eula" > "./eula.txt"
+    if [ "$eula" = "true" ]; then
+        echo "eula=$eula" > "./eula.txt"
+    fi
 fi
 
 ## OPS
