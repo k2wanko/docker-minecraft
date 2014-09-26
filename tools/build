@@ -1,0 +1,45 @@
+#!/bin/sh
+
+id=$(docker info | grep Username | awk '{ print $2"/" }')
+cmd=$1
+
+gettag() {
+    echo $id"minecraft:$1"
+}
+
+build() {
+    version=$1
+    target=$2
+    tag=$(gettag $version)
+    docker build -t $tag $target
+    return 0
+}
+
+targets() {
+    target=$1
+    ls | grep $target | sed -e "s/$target//g" | sort -r | while read f; do
+        path=$(pwd)/$target$f
+        
+        if [ -e "$path/Dockerfile" ]; then
+            echo $f $path
+        fi
+
+    done
+}
+
+main(){
+
+    targets vanilla- | while read f; do
+        ret=($f)
+        build ${ret[0]} ${ret[1]}
+    done
+    
+    #targets vanilla- | while read f; do
+    #    ret=($f)
+    #    echo docker push $(gettag ${ret[0]})
+    #done
+
+}
+
+#build 1.8 ./vanilla-1.8
+main

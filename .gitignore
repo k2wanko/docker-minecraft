@@ -1,0 +1,6 @@
+*.json
+*.txt
+*.jar
+*.converted
+*.properties
+tmp
