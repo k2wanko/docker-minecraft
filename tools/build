@@ -34,6 +34,10 @@ main(){
         build ${ret[0]} ${ret[1]}
     done
     
+    targets forge- | while read f; do
+        ret=($f)
+        build forge-${ret[0]} ${ret[1]}
+    done
     #targets vanilla- | while read f; do
     #    ret=($f)
     #    echo docker push $(gettag ${ret[0]})
