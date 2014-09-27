@@ -1,0 +1,13 @@
+#!/bin/bash
+
+url="http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.0.1180/forge-1.7.10-10.13.0.1180-installer.jar"
+
+curl -# -o /data/installer.jar $url
+
+mkdir /scripts/forge
+cd /scripts/forge
+
+java -jar /data/installer.jar --installServer > /dev/null 2>&1
+
+mv /scripts/forge/forge-1.7.10-10.13.0.1180-universal.jar /scripts/forge/minecraft_server.jar
+

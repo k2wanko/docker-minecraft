@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mv /scripts/forge/* /data/
+java -jar /data/minecraft_server.jar nogui
