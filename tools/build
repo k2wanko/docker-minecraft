@@ -38,12 +38,7 @@ main(){
         ret=($f)
         build forge-${ret[0]} ${ret[1]}
     done
-    #targets vanilla- | while read f; do
-    #    ret=($f)
-    #    echo docker push $(gettag ${ret[0]})
-    #done
 
 }
 
-#build 1.8 ./vanilla-1.8
 main
