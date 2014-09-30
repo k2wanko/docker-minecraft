@@ -1,1 +1,1 @@
-FROM k2wanko/minecraft:forge-1.7.10
+FROM k2wanko/minecraft:1.8
