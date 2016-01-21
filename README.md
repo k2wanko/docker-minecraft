@@ -1,11 +1,9 @@
-
-# Docker Minecraft onbuild
+# Docker Minecraft
 
 ## QuickStart
-
 ```
-$ echo "FROM k2wanko/minecraft:1.8" > Dockerfile && docker build -t k2wanko/minecraft .
-$ docker run --name some-minecraft -i -p 25565:25565 -e "EULA=true" k2wanko/minecraft
+$ docker build -t k2wanko/minecraft .
+$ docker run --name some-minecraft -i -p 25565:25565 k2wanko/minecraft
 ```
 
 ## LICENSE

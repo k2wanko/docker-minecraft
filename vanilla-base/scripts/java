@@ -1,8 +1,0 @@
-#!/bin/sh
-
-java="/usr/bin/java"
-
-# setting env
-setenv
-
-$java $@
